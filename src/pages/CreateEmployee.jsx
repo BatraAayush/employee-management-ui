@@ -10,7 +10,6 @@ import Loader from "../components/Loader";
 import Popoup from "../components/Popoup";
 import { useParams } from "react-router";
 import { RxCross1 } from "react-icons/rx";
-// import { updateEmployee } from "../../../employee-management-api/controllers/employee.controller";
 
 const CreateEmployee = () => {
   const [employeeData, setEmployeeData] = useState({
@@ -32,6 +31,7 @@ const CreateEmployee = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const [file, setFile] = useState(null);
+  const [fileUrl, setFileUrl] = useState(null);
   const [editImage, setEditImage] = useState(false);
 
   useEffect(() => {
@@ -147,6 +147,8 @@ const CreateEmployee = () => {
       }
       case "file": {
         setFile(e.target.files[0]);
+        const blobURL = URL.createObjectURL(e.target.files[0]);
+        setFileUrl(blobURL);
         break;
       }
       default:
@@ -157,7 +159,7 @@ const CreateEmployee = () => {
     <>
       <form
         onSubmit={submitForm}
-        className="flex flex-col items-center mt-12 gap-8 border-4 border-gray-300 rounded-md w-[40%] m-auto p-8"
+        className="flex flex-col items-center my-12 gap-4 border-4 border-gray-300 rounded-md w-[40%] m-auto p-8"
       >
         <div className="flex w-full justify-between">
           <label>Name</label>
@@ -295,13 +297,15 @@ const CreateEmployee = () => {
               />
             </div>
           ) : (
-            <input
-              className="w-[50%]"
-              accept=".jpg, .jpeg, .png"
-              type="file"
-              onChange={handleChange}
-              required
-            />
+            <div className="w-[50%] flex flex-col gap-4">
+              <input
+                accept=".jpg, .jpeg, .png"
+                type="file"
+                onChange={handleChange}
+                required
+              />
+              {fileUrl && <img src={fileUrl} className="w-16 h-16" />}
+            </div>
           )}
         </div>
         <p className="text-red-500">{errorMessage}</p>
