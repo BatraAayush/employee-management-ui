@@ -33,15 +33,18 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-[10%] gap-8 border-4 border-gray-300 rounded-md w-min m-auto p-8">
+    <div className="flex flex-col items-center mt-[10%] gap-8 border-4 border-gray-300 rounded-md w-min m-auto p-4 md:p-8">
       <h1 className="text-4xl uppercase">{authMode}</h1>
-      <form className="flex flex-col gap-8 w-[20rem]" onSubmit={handleSubmit}>
+      <form
+        className="flex flex-col gap-8 w-[15rem] md:w-[20rem]"
+        onSubmit={handleSubmit}
+      >
         <div className="flex justify-between items-center">
           <label>USERNAME</label>
           <input
             name="username"
             type="text"
-            className="border border-black rounded-md px-2 py-1"
+            className="border border-black w-[9rem] md:w-max rounded-md px-1 lg:px-2 py-1"
             onChange={handleInput}
             required
           />
@@ -50,8 +53,8 @@ const Login = () => {
           <label>PASSWORD</label>
           <input
             name="password"
+            className="border border-black w-[9rem] md:w-max rounded-md px-1 lg:px-2 py-1"
             type={showPassword ? "text" : "password"}
-            className="border border-black rounded-md px-2 py-1"
             onChange={handleInput}
             required
           />
