@@ -159,12 +159,12 @@ const CreateEmployee = () => {
     <>
       <form
         onSubmit={submitForm}
-        className="flex flex-col items-center my-12 gap-4 border-4 border-gray-300 rounded-md w-[40%] m-auto p-8"
+        className="flex flex-col items-center my-12 gap-4 border-4 border-gray-300 rounded-md w-[95%] md:w-[60%] lg:w-[40%] m-auto p-4 md:p-8"
       >
         <div className="flex w-full justify-between">
           <label>Name</label>
           <input
-            className="border border-black rounded-md px-2 py-1 w-[50%]"
+            className="border border-black rounded-md px-2 py-1 w-[60%] md:w-[50%]"
             type="text"
             required
             onChange={handleChange}
@@ -175,7 +175,7 @@ const CreateEmployee = () => {
         <div className="flex w-full justify-between">
           <label>Email</label>
           <input
-            className="border border-black rounded-md px-2 py-1 w-[50%]"
+            className="border border-black rounded-md px-2 py-1 w-[60%] md:w-[50%]"
             type="email"
             name="email"
             onChange={handleChange}
@@ -186,7 +186,7 @@ const CreateEmployee = () => {
         <div className="flex w-full justify-between">
           <label>Mobile No</label>
           <input
-            className="border border-black rounded-md px-2 py-1 w-[50%]"
+            className="border border-black rounded-md px-2 py-1 w-[60%] md:w-[50%]"
             type="number"
             name="mobileNo"
             onChange={handleChange}
@@ -197,7 +197,7 @@ const CreateEmployee = () => {
         <div className="flex w-full justify-between">
           <label>Designation</label>
           <select
-            className="border border-black rounded-md px-2 py-1 w-[50%] cursor-pointer"
+            className="border border-black rounded-md px-2 py-1 w-[60%] md:w-[50%] cursor-pointer"
             onChange={handleChange}
             name="designation"
             value={employeeData?.designation}
@@ -219,7 +219,7 @@ const CreateEmployee = () => {
         </div>
         <div className="flex w-full justify-between">
           <label>Gender</label>
-          <div className="w-[50%] flex justify-start gap-4 flex-wrap">
+          <div className="w-[50%] flex justify-start gap-2 md:gap-4 flex-wrap">
             <label className="cursor-pointer flex gap-2">
               <input
                 type="radio"
@@ -246,7 +246,7 @@ const CreateEmployee = () => {
         </div>
         <div className="flex w-full justify-between">
           <label>Course</label>
-          <div className="w-[50%] flex justify-start gap-4 flex-wrap">
+          <div className="w-[50%] flex justify-start gap-2 md:gap-4 flex-wrap">
             <label className="cursor-pointer flex gap-2">
               <input
                 type="checkbox"

@@ -22,12 +22,12 @@ const Navbar = () => {
         currentPath.includes("/create-employee") ||
         currentPath === "/employee-list") && (
         <div className="flex justify-between px-4 py-4 bg-blue-500 text-white">
-          <div className="flex gap-8">
+          <div className="flex gap-2 md:gap-8 text-sm md:text-base flex-col md:flex-row">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/employee-list">Employee List</NavLink>
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex gap-2 md:gap-8 text-sm md:text-base flex-col md:flex-row items-end md:items-center">
             <p className="capitalize">Hii {username}</p>
             <button onClick={handleLogout}>Logout</button>
           </div>
