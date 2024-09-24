@@ -284,7 +284,11 @@ const CreateEmployee = () => {
           <label>Image Upload</label>
           {!editImage && id ? (
             <div className="w-[50%] flex gap-2">
-              <img src={employeeData?.image} className="w-16 h-16" />
+              <img
+                src={employeeData?.image}
+                className="w-16 h-16"
+                alt="profile"
+              />
               <RxCross1
                 className="cursor-pointer"
                 onClick={() => setEditImage(true)}

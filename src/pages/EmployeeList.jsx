@@ -111,7 +111,11 @@ const EmployeeList = () => {
                       {id + 1}
                     </td>
                     <td className="border border-black py-1 px-1 text-center">
-                      <img src={emp?.image} className="w-full h-full" />
+                      <img
+                        src={emp?.image}
+                        className="w-full h-full"
+                        alt="profile"
+                      />
                     </td>
                     <td className="border border-black py-1 px-2 text-center capitalize">
                       {emp?.name}
