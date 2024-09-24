@@ -304,7 +304,7 @@ const CreateEmployee = () => {
                 onChange={handleChange}
                 required
               />
-              {fileUrl && <img src={fileUrl} className="w-16 h-16" />}
+              {fileUrl && <img src={fileUrl} className="w-16 h-16" alt="profile"/>}
             </div>
           )}
         </div>
